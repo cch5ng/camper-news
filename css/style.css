@@ -1,0 +1,120 @@
+body {
+	/*background-image: url('https://openclipart.org/download/222488/pengucorn.svg');*/
+	background-size: 1331px 1200px;
+	background-position: 50% -150px, center;
+	background-repeat: no-repeat;
+	margin-top: 15px;
+	background-color: #b0aeba;
+	color: #000;
+	font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+	text-align: center;
+	margin-top: 0;
+}
+
+p {
+	font-size: 1.25em;
+	text-align: center;
+}
+
+footer {
+	color: #042e48;
+	font-size: 0.85em;
+}
+
+.buttons {
+	margin: 20px auto;
+}
+
+.button {
+	background-color: #8c8b94;
+	font-size: 1.25em;
+	display: block;
+	margin: 10px auto;
+	/* overwriting bootstrap button style */
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-radius: 10px;
+	border-top: ;
+	border-right: ;
+	border-left: ;
+	border-bottom: 3px solid #58575d;
+}
+
+/* phone landscape does not look good */
+
+@media only screen and (min-width: 480px) {
+}
+
+@media only screen and (min-width: 600px) and (orientation: portrait) {
+
+	body {
+		background-size: 1500px 1351px;
+		background-position: 50% -165px, center;
+	}
+
+	h2 {
+		margin-top: 20px;
+	}
+
+}
+
+@media only screen and (min-width: 640px) and (orientation: landscape) {
+
+	body {
+		background-size: 355px 320px;
+		background-position: 90% 30px;
+	}
+
+	h2 {
+		text-align: left;
+		margin-top: 0;
+	}
+
+	p {
+		text-align: left;
+	}
+
+	.button {
+		margin: 10px 0;
+	}
+
+}
+
+@media only screen and (min-width: 768px) {
+
+	body {
+		background-size: 900px 811px;
+		background-position: 50% 40px, center;
+	}
+
+	h2 {
+		text-align: center;
+		margin-top: 110px;
+	}
+
+	p {
+		text-align: center;
+	}
+
+	.button {
+		margin: 30px auto;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	body {
+		background-position: 50% 40px, center;
+	}
+
+	header {
+		margin-top: 110px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	/* how to handle case where screen is wider than image width*/
+}
