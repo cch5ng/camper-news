@@ -55,6 +55,8 @@ footer {
 	/* overwriting bootstrap button style */
 	border: 1px solid #58575d;
 	border-radius: 10px;
+	-moz-border-radius: 10px;
+	webkit-border-radius: 10px;
 }
 
 img {
