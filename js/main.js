@@ -96,7 +96,7 @@ function displayStories(storyObj) {
   p.appendChild(a3);
 
   var span = document.createElement('span');
-  span.innerText = storyObj.upvotes + ' points';
+  span.innerHTML = "<i class='icon ion-ios-circle-outline'></i> " + storyObj.upvotes + " points";
   p.appendChild(span)
 
   article.appendChild(p);
