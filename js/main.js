@@ -11,6 +11,7 @@
 //data model
 var stories = [];
 var requestUrl = 'http://www.freecodecamp.com/stories/hotStories';
+var maxHeadlineLength = 62;
 
 //helper function
 //given a story's native storyLink, parses the string to the format necessary to create a FreeCodeCamp discussion page link
@@ -20,24 +21,39 @@ function parseDiscussLink(str) {
   return strAr.join('-');  
 }
 
+//helper function
+//given a string with length > len (int param), returns a string where max length is len
+//removes whole words at the end of the string and appends '...' to the end
+//this function should only be called in the case that the str param has length > len
+//right now default len is 45
+function shortenStr(str, len) {
+  var strAr, shortStr, curLength;
+  var finAr = [];
+  var suffix = ['...'];
+  
+  curLength = 0;
+  strAr = str.split(' ');
+    for (var i = 0; i < strAr.length; i++) {
+        if (curLength + strAr[i].length + 1 <= len) {
+          curLength += strAr[i].length + 1;
+          finAr.push(strAr[i]);
+        }
+    }
+
+  shortStr = finAr.join(' ').concat(suffix);
+  console.log(shortStr);
+  return shortStr;
+}
+
 function displayStories(storyObj) {
 
   var winWidth = document.body.clientWidth;
-  console.log('winWidth: ' + winWidth);
+  //console.log('winWidth: ' + winWidth);
   var imgWidth = (winWidth * (0.8) * 0.3);
-  console.log('imgWidth: ' + imgWidth);
+  //console.log('imgWidth: ' + imgWidth);
 
   var main = document.querySelector('main');
   var article = document.createElement('article');
-
-  // var img = document.createElement('img');
-  // img.src = storyObj.img;
-  // img.alt = 'story graphic';
-
-  imgWidth = storyObj.image.naturalWidth;
-  imgHeight = storyObj.image.naturalHeight;
-  console.log('imgWidth: ' + imgWidth);
-  console.log('imgHeight: ' + imgHeight);
 
   var a = document.createElement('a');
   a.setAttribute('href', storyObj.link);
@@ -57,7 +73,14 @@ function displayStories(storyObj) {
   a2.setAttribute('href', storyObj.link);
   a2.setAttribute('target', '_blank');
   a2.setAttribute('class', 'story-link');
-  a2.innerText = storyObj.headline;
+
+  //want to shorten long headlines so the height of the article looks visually clean
+  if (storyObj.headline.length > maxHeadlineLength) {
+    var shortHeadline = shortenStr(storyObj.headline, maxHeadlineLength);
+    a2.innerText = shortHeadline;
+  } else {
+    a2.innerText = storyObj.headline;
+  }
 
   var h3 = document.createElement('h3');
   h3.appendChild(a2);
@@ -71,17 +94,13 @@ function displayStories(storyObj) {
   a3.setAttribute('class', 'button');
   a3.innerText = 'Discuss';
   p.appendChild(a3);
-  console.log(p);
 
   var span = document.createElement('span');
   span.innerText = storyObj.upvotes + ' points';
   p.appendChild(span)
 
   article.appendChild(p);
-  //article.appendChild(p2);
   main.appendChild(article);
-  //main.setAttribute();
-
 }
 
 
