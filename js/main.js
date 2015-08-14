@@ -22,32 +22,65 @@ function parseDiscussLink(str) {
 
 function displayStories(storyObj) {
 
+  var winWidth = document.body.clientWidth;
+  console.log('winWidth: ' + winWidth);
+  var imgWidth = (winWidth * (0.8) * 0.3);
+  console.log('imgWidth: ' + imgWidth);
+
   var main = document.querySelector('main');
   var article = document.createElement('article');
+
+  // var img = document.createElement('img');
+  // img.src = storyObj.img;
+  // img.alt = 'story graphic';
+
+  imgWidth = storyObj.image.naturalWidth;
+  imgHeight = storyObj.image.naturalHeight;
+  console.log('imgWidth: ' + imgWidth);
+  console.log('imgHeight: ' + imgHeight);
 
   var a = document.createElement('a');
   a.setAttribute('href', storyObj.link);
   a.setAttribute('target', '_blank');
-  a.innerText = storyObj.headline;
+  a.setAttribute('class', 'story-logo');
+  //a.setAttribute('class', 'story-link');
+  if (storyObj.image.length > 0) {
+    a.innerHTML = "<img src='" + storyObj.image + "' alt='story graphic'>";
+  } else {
+//TODO, this only works for desktop
+//how to fix this for responsive
+    a.innerHTML = "<img src='http://p-hold.com/310/226' alt='story graphic'>";
+  }
+  article.appendChild(a);
 
-  var h2 = document.createElement('h2');
-  h2.appendChild(a);
+  var a2 = document.createElement('a');
+  a2.setAttribute('href', storyObj.link);
+  a2.setAttribute('target', '_blank');
+  a2.setAttribute('class', 'story-link');
+  a2.innerText = storyObj.headline;
+
+  var h3 = document.createElement('h3');
+  h3.appendChild(a2);
+  article.appendChild(a2);
 
   var p = document.createElement('p');
-  var a2 = document.createElement('a');
-  a2.setAttribute('href',  storyObj.discussLink);
-  a2.setAttribute('target', '_blank');
-  a2.innerText = 'Discuss';
-  p.appendChild(a2);
+  p.setAttribute('class', 'story');
+  var a3 = document.createElement('a');
+  a3.setAttribute('href',  storyObj.discussLink);
+  a3.setAttribute('target', '_blank');
+  a3.setAttribute('class', 'button');
+  a3.innerText = 'Discuss';
+  p.appendChild(a3);
   console.log(p);
 
-  var p2 = document.createElement('p');
-  p2.innerText = storyObj.upvotes + ' upvotes';
+  var span = document.createElement('span');
+  span.innerText = storyObj.upvotes + ' points';
+  p.appendChild(span)
 
-  article.appendChild(h2);
   article.appendChild(p);
-  article.appendChild(p2);
+  //article.appendChild(p2);
   main.appendChild(article);
+  //main.setAttribute();
 
 }
 
@@ -63,6 +96,7 @@ done(function(result) {
     var discussPrefix = 'http://www.freecodecamp.com/news/';
 
     storyObj.id = result[i]._id;
+    storyObj.image = result[i].image;
     storyObj.headline = result[i].headline;
     storyObj.link = result[i].link;
     //need helper function to parse
@@ -73,11 +107,11 @@ done(function(result) {
   }
 }).
 error(function(error) {
-  console.log('error: ' + error);    
+  console.log('error: ' + error);
 }).
 always(function() {
-  console.log(stories);
-  displayStories(stories[0]);
-  //console.log(stories[0]);
-  //console.log(stories[49]);
+  //console.log(stories);
+  stories.forEach(function(story) {
+    displayStories(story);
+  });
 });
