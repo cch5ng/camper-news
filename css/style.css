@@ -1,21 +1,12 @@
 body {
-	/*background-image: url('https://openclipart.org/download/222488/pengucorn.svg');*/
-/*	background-size: 1331px 1200px;
-	background-position: 50% -150px, center;
-	background-repeat: no-repeat;
-	margin-top: 15px;*/
 	background-color: #457e86;
 	color: #000;
+	font-family: 'Lato',sans-serif;
 	border: 1px solid red;
 }
 
-/*.container {
-
-}*/
-
 .main {
-/*	background-color: #86457e;
-*/	width: 90%;
+	width: 90%;
 	height: 100%;
 	margin: 0 auto;
 	border: 1px solid red;
@@ -24,8 +15,7 @@ body {
 article {
 	width: 100%;
 	background-color: #fff;
-	/*display: inline-block;*/
-	padding: 5px 0 10px;
+	padding: 0 0 15px;
 	border: 1px solid red;
 }
 
@@ -61,7 +51,7 @@ footer {
 .button {
 	color: #457e86;
 /*	background-color: #8c8b94;*/
-	font-size: 0.85em;
+	/*font-size: 0.85em;*/
 	margin: 10px auto;
 	padding: 5px;
 	/* overwriting bootstrap button style */
@@ -79,6 +69,7 @@ footer {
 
 img {
 	display: none;
+	border-radius: 12px;
 /*	max-width: 90%;
 	height: 65%;
 	margin: 0 auto;
@@ -86,16 +77,21 @@ img {
 
 .story-link, .story {
 	width: 90%;
-	margin: 0 5%;
+	margin: 5px 5%;
 }
 
 .story-link {
 	color: #457e86;
 	display: block;
 	max-width: 90%;
-	font-size: 1.4em;
-	text-align: justify;
-	word-wrap: break-word;
+	font-size: 1.25em;
+	text-align: justify-all;
+	flex-wrap: wrap;
+/*	word-wrap: break-word;*/
+}
+
+.story {
+	font-size: 1em;
 }
 
 a:link, a:hover {
@@ -174,7 +170,7 @@ a:link, a:hover {
 
 	article {
 		width: 33%;
-		height: 260px;
+		height: 350px;
 		float: left;
 		border: 1px solid red;
 	}
