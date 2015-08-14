@@ -11,7 +11,7 @@
 //data model
 var stories = [];
 var requestUrl = 'http://www.freecodecamp.com/stories/hotStories';
-var maxHeadlineLength = 62;
+var maxHeadlineLength = 58;
 
 //helper function
 //given a story's native storyLink, parses the string to the format necessary to create a FreeCodeCamp discussion page link
@@ -110,7 +110,7 @@ var jqxhr = $.ajax({
 }).
 done(function(result) {
   
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 51; i++) {
     var storyObj = {};
     var discussPrefix = 'http://www.freecodecamp.com/news/';
 
