@@ -32,7 +32,6 @@ h3 {
 
 p {
 	font-size: 1.25em;
-	/*text-align: center;*/
 }
 
 span {
@@ -50,30 +49,17 @@ footer {
 
 .button {
 	color: #457e86;
-/*	background-color: #8c8b94;*/
-	/*font-size: 0.85em;*/
 	margin: 10px auto;
 	padding: 5px;
 	/* overwriting bootstrap button style */
 	border: 1px solid #58575d;
 	border-radius: 10px;
-
-/*	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-	border-top: ;
-	border-right: ;
-	border-left: ;
-	border-bottom: 3px solid #58575d;
-*/}
+}
 
 img {
 	display: none;
 	border-radius: 12px;
-/*	max-width: 90%;
-	height: 65%;
-	margin: 0 auto;
-*/}
+}
 
 .story-link, .story {
 	width: 90%;
@@ -87,7 +73,6 @@ img {
 	font-size: 1.25em;
 	text-align: justify-all;
 	flex-wrap: wrap;
-/*	word-wrap: break-word;*/
 }
 
 .story {
@@ -98,16 +83,9 @@ a:link, a:hover {
 	color: #457e86;
 }
 
-/* phone landscape does not look good */
-
-@media only screen and (min-width: 480px) {
-}
-
-@media only screen and (min-width: 600px)  { /* and (orientation: portrait) */
+@media only screen and (min-width: 600px)  {
 
 	body {
-		/*background-size: 1500px 1351px;
-		background-position: 50% -165px, center;*/
 	}
 
 	h2 {
@@ -126,34 +104,9 @@ a:link, a:hover {
 		height: 65%;
 		margin: 0 auto;
 	}
-
 }
 
-/*@media only screen and (min-width: 640px) and (orientation: landscape) {
-
-	body {
-		background-size: 355px 320px;
-		background-position: 90% 30px;
-	}
-
-	h2 {
-		margin-top: 0;
-	}
-
-	p {
-	}
-
-	.button {
-		margin: 10px 0;
-	}
-}*/
-
 @media only screen and (min-width: 768px) {
-
-	body {
-/*		background-size: 900px 811px;
-		background-position: 50% 40px, center;
-*/	}
 
 	main {
 		width: 80%;
@@ -161,11 +114,6 @@ a:link, a:hover {
 
 	h2 {
 		text-align: center;
-/*		margin-top: 110px;*/
-	}
-
-	p {
-		/*text-align: center;*/
 	}
 
 	article {
@@ -188,22 +136,24 @@ a:link, a:hover {
 }
 
 @media only screen and (min-width: 992px) {
+
 	body {
 		background-position: 50% 40px, center;
 	}
 
-	header {
-		/*margin-top: 110px;*/
-	}
-
 	article {
-		/*width: 33%;*/
 		height: 350px;
 		margin: 0 auto;
 	}
-
 }
 
 @media only screen and (min-width: 1200px) {
-	/* how to handle case where screen is wider than image width*/
+
+	.story-link {
+		text-align: center;
+	}
+
+	p {
+		text-align: center;
+	}
 }
