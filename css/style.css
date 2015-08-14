@@ -25,13 +25,13 @@ article {
 	width: 100%;
 	background-color: #fff;
 	/*display: inline-block;*/
-	padding-top: 10px;
+	padding: 5px 0 10px;
 	border: 1px solid red;
 }
 
 h2 {
 	text-align: center;
-	margin-top: 0;
+	margin-top: 20px;
 }
 
 h3 {
@@ -107,7 +107,7 @@ a:link, a:hover {
 @media only screen and (min-width: 480px) {
 }
 
-@media only screen and (min-width: 600px) and (orientation: portrait) {
+@media only screen and (min-width: 600px)  { /* and (orientation: portrait) */
 
 	body {
 		/*background-size: 1500px 1351px;
@@ -133,26 +133,24 @@ a:link, a:hover {
 
 }
 
-@media only screen and (min-width: 640px) and (orientation: landscape) {
+/*@media only screen and (min-width: 640px) and (orientation: landscape) {
 
 	body {
-		/*background-size: 355px 320px;
-		background-position: 90% 30px;*/
+		background-size: 355px 320px;
+		background-position: 90% 30px;
 	}
 
 	h2 {
-		/*text-align: left;*/
 		margin-top: 0;
 	}
 
 	p {
-		/*text-align: left;*/
 	}
 
 	.button {
 		margin: 10px 0;
 	}
-}
+}*/
 
 @media only screen and (min-width: 768px) {
 
