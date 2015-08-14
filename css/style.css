@@ -1,12 +1,32 @@
 body {
 	/*background-image: url('https://openclipart.org/download/222488/pengucorn.svg');*/
-	background-size: 1331px 1200px;
+/*	background-size: 1331px 1200px;
 	background-position: 50% -150px, center;
 	background-repeat: no-repeat;
-	margin-top: 15px;
-	background-color: #b0aeba;
+	margin-top: 15px;*/
+	background-color: #457e86;
 	color: #000;
-	font-family: 'Raleway', sans-serif;
+	border: 1px solid red;
+}
+
+/*.container {
+
+}*/
+
+.main {
+/*	background-color: #86457e;
+*/	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	border: 1px solid red;
+}
+
+article {
+	width: 100%;
+	background-color: #fff;
+	/*display: inline-block;*/
+	padding-top: 10px;
+	border: 1px solid red;
 }
 
 h2 {
@@ -14,9 +34,19 @@ h2 {
 	margin-top: 0;
 }
 
+h3 {
+	width: 90%;
+	margin: 0 5%;
+	font-size: 1.4em;
+}
+
 p {
 	font-size: 1.25em;
-	text-align: center;
+	/*text-align: center;*/
+}
+
+span {
+	margin-left: 15px;
 }
 
 footer {
@@ -29,19 +59,47 @@ footer {
 }
 
 .button {
-	background-color: #8c8b94;
-	font-size: 1.25em;
-	display: block;
+	color: #457e86;
+/*	background-color: #8c8b94;*/
+	font-size: 0.85em;
 	margin: 10px auto;
+	padding: 5px;
 	/* overwriting bootstrap button style */
-	border-top: 0;
+	border: 1px solid #58575d;
+	border-radius: 10px;
+
+/*	border-top: 0;
 	border-left: 0;
 	border-right: 0;
-	border-radius: 10px;
 	border-top: ;
 	border-right: ;
 	border-left: ;
 	border-bottom: 3px solid #58575d;
+*/}
+
+img {
+	display: none;
+/*	max-width: 90%;
+	height: 65%;
+	margin: 0 auto;
+*/}
+
+.story-link, .story {
+	width: 90%;
+	margin: 0 5%;
+}
+
+.story-link {
+	color: #457e86;
+	display: block;
+	max-width: 90%;
+	font-size: 1.4em;
+	text-align: justify;
+	word-wrap: break-word;
+}
+
+a:link, a:hover {
+	color: #457e86;
 }
 
 /* phone landscape does not look good */
@@ -52,12 +110,25 @@ footer {
 @media only screen and (min-width: 600px) and (orientation: portrait) {
 
 	body {
-		background-size: 1500px 1351px;
-		background-position: 50% -165px, center;
+		/*background-size: 1500px 1351px;
+		background-position: 50% -165px, center;*/
 	}
 
 	h2 {
 		margin-top: 20px;
+	}
+
+	article {
+		width: 50%;
+		height: 400px;
+		float: left;
+	}
+
+	img {
+		display: block;
+		max-width: 90%;
+		height: 65%;
+		margin: 0 auto;
 	}
 
 }
@@ -65,39 +136,56 @@ footer {
 @media only screen and (min-width: 640px) and (orientation: landscape) {
 
 	body {
-		background-size: 355px 320px;
-		background-position: 90% 30px;
+		/*background-size: 355px 320px;
+		background-position: 90% 30px;*/
 	}
 
 	h2 {
-		text-align: left;
+		/*text-align: left;*/
 		margin-top: 0;
 	}
 
 	p {
-		text-align: left;
+		/*text-align: left;*/
 	}
 
 	.button {
 		margin: 10px 0;
 	}
-
 }
 
 @media only screen and (min-width: 768px) {
 
 	body {
-		background-size: 900px 811px;
+/*		background-size: 900px 811px;
 		background-position: 50% 40px, center;
+*/	}
+
+	main {
+		width: 80%;
 	}
 
 	h2 {
 		text-align: center;
-		margin-top: 110px;
+/*		margin-top: 110px;*/
 	}
 
 	p {
-		text-align: center;
+		/*text-align: center;*/
+	}
+
+	article {
+		width: 33%;
+		height: 260px;
+		float: left;
+		border: 1px solid red;
+	}
+
+	img {
+		display: block;
+		max-width: 90%;
+		height: 65%;
+		margin: 0 auto;
 	}
 
 	.button {
@@ -111,8 +199,15 @@ footer {
 	}
 
 	header {
-		margin-top: 110px;
+		/*margin-top: 110px;*/
 	}
+
+	article {
+		/*width: 33%;*/
+		height: 350px;
+		margin: 0 auto;
+	}
+
 }
 
 @media only screen and (min-width: 1200px) {
