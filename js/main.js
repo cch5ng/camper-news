@@ -1,13 +1,3 @@
-//pseudocode
-//need to make an ajax request with http://www.freecodecamp.com/stories/hotStories
-//would like to get just the most recent 50 stories
-//want to track these items per story
-// result._id: just for internal tracking
-// result.headline: to display
-// result.link: to link to
-// result.storyLink: to parse for the discussion page
-// result.upvotes: bonus 
-
 //data model
 var stories = [];
 var requestUrl = 'http://www.freecodecamp.com/stories/hotStories';
@@ -16,7 +6,6 @@ var maxHeadlineLength = 58;
 //helper function
 //given a story's native storyLink, parses the string to the format necessary to create a FreeCodeCamp discussion page link
 function parseDiscussLink(str) {
-  //TODO
   var strAr = str.split(' ');
   return strAr.join('-');  
 }
@@ -41,7 +30,7 @@ function shortenStr(str, len) {
     }
 
   shortStr = finAr.join(' ').concat(suffix);
-  console.log(shortStr);
+  //console.log(shortStr);
   return shortStr;
 }
 
@@ -77,9 +66,9 @@ function displayStories(storyObj) {
   //want to shorten long headlines so the height of the article looks visually clean
   if (storyObj.headline.length > maxHeadlineLength) {
     var shortHeadline = shortenStr(storyObj.headline, maxHeadlineLength);
-    a2.innerText = shortHeadline;
+    a2.innerHTML = shortHeadline;
   } else {
-    a2.innerText = storyObj.headline;
+    a2.innerHTML = storyObj.headline;
   }
 
   var h3 = document.createElement('h3');
@@ -92,7 +81,7 @@ function displayStories(storyObj) {
   a3.setAttribute('href',  storyObj.discussLink);
   a3.setAttribute('target', '_blank');
   a3.setAttribute('class', 'button');
-  a3.innerText = 'Discuss';
+  a3.innerHTML = 'Discuss';
   p.appendChild(a3);
 
   var span = document.createElement('span');
@@ -103,7 +92,7 @@ function displayStories(storyObj) {
   main.appendChild(article);
 }
 
-
+//TODO, should all of the js be inside an IIFE so the loading happens faster?
 var jqxhr = $.ajax({
   url: requestUrl,
   dataType: 'json'
